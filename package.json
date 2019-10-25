@@ -1,0 +1,22 @@
+{
+  "name": "aws-cdk-elasticsearch",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "synth": "'cdk synth --no-staging -c stage=dev -c sourceIp=`curl -s https://checkip.amazonaws.com` > template.yaml",
+    "deploy": "'cdk deploy -c stage=dev -c sourceIp=`curl -s https://checkip.amazonaws.com`",
+    "destroy": "'cdk destroy -c stage=dev"
+  },
+  "devDependencies": {
+    "aws-cdk": "^1.14.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.6.4"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-elasticsearch": "^1.14.0",
+    "@aws-cdk/core": "^1.14.0"
+  }
+}

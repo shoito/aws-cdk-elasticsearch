@@ -1,0 +1,29 @@
+{
+  "app": "npx ts-node index.ts",
+  "context": {
+    "es": {
+      "version": "7.1"
+    },
+    "dev": {
+      "es": {
+        "domainName": "test-dev-domain",
+        "instanceType": "t2.small.elasticsearch",
+        "instanceCount": 1,
+        "volumeSize": 10
+      }
+    },
+    "prod": {
+      "es": {
+        "domainName": "test-prod-domain",
+        "masterInstanceType": "r5.small.elasticsearch",
+        "instanceType": "r5.small.elasticsearch",
+        "instanceCount": 2,
+        "volumeSize": 10,
+        "availabilityZoneCount": 2,
+        "zoneAwareness": true,
+        "dedicatedMaster": true,
+        "encryption": true
+      }
+    }
+  }
+}
